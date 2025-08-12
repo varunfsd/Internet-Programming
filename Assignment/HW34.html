@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef2f3;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            background-color: #fff;
+            max-width: 600px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .gender-group {
+            margin-top: 10px;
+        }
+
+        .gender-group label {
+            font-weight: normal;
+            margin-right: 15px;
+        }
+
+        .checkbox-group {
+            margin-top: 10px;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .submit-btn {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .submit-btn:hover {
+            background-color: #218838;
+        }
+
+        .reset-btn {
+            background-color: #dc3545;
+            color: white;
+            margin-left: 10px;
+        }
+
+        .reset-btn:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>User Registration Form</h2>
+
+    <form action="#" method="post">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="fullname" required>
+
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" rows="3" required></textarea>
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label>Gender:</label>
+        <div class="gender-group">
+            <input type="radio" id="male" name="gender" value="Male" required>
+            <label for="male">Male</label>
+
+            <input type="radio" id="female" name="gender" value="Female">
+            <label for="female">Female</label>
+
+            <input type="radio" id="other" name="gender" value="Other">
+            <label for="other">Other</label>
+        </div>
+
+        <label for="state">State:</label>
+        <input type="text" id="state" name="state" required>
+
+        <label for="country">Country:</label>
+        <input type="text" id="country" name="country" required>
+
+        <div class="checkbox-group">
+            <input type="checkbox" id="terms" name="terms" required>
+            <label for="terms">I agree to the terms and conditions</label>
+        </div>
+
+        <button type="submit" class="submit-btn">Register</button>
+        <button type="reset" class="reset-btn">Reset</button>
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Online Ticket Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 500px;
+            margin: auto;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        .radio-group,
+        .checkbox-group {
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin-top: 15px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Online Ticket Booking Form</h2>
+
+    <form action="#" method="post">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="fullname" required>
+
+        <label for="email">Email Address:</label>
+        <input type="text" id="email" name="email" required>
+
+        <label for="destination">Destination:</label>
+        <input type="text" id="destination" name="destination" required>
+
+        <label for="comments">Special Requests / Comments:</label>
+        <textarea id="comments" name="comments" rows="4"></textarea>
+
+        <label>Ticket Type:</label>
+        <div class="radio-group">
+            <input type="radio" id="oneway" name="ticket_type" value="One Way" checked>
+            <label for="oneway">One Way</label><br>
+            <input type="radio" id="roundtrip" name="ticket_type" value="Round Trip">
+            <label for="roundtrip">Round Trip</label>
+        </div>
+
+        <label>Additional Options:</label>
+        <div class="checkbox-group">
+            <input type="checkbox" id="meal" name="options" value="Meal">
+            <label for="meal">Include Meal</label><br>
+            <input type="checkbox" id="insurance" name="options" value="Travel Insurance">
+            <label for="insurance">Add Travel Insurance</label><br>
+            <input type="checkbox" id="priority" name="options" value="Priority Boarding">
+            <label for="priority">Priority Boarding</label>
+        </div>
+
+        <button type="submit">Book Ticket</button>
+        <button type="reset">Reset</button>
+    </form>
+
+</body>
+</html>

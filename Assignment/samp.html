@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course Application</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 6px 0 15px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    .row {
+      display: flex;
+      gap: 10px;
+    }
+
+    .row > div {
+      flex: 1;
+    }
+
+    .radio-group,
+    .gender-group {
+      margin-bottom: 15px;
+    }
+
+    .gender-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .submit-btn {
+      background-color: #04AA6D;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 4px;
+      width: 100%;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      background-color: #03995f;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Course Application</h2>
+    <form action="submit.php" method="POST">
+      <input type="text" name="fullname" placeholder="Full name" required>
+      
+      <div class="row">
+        <div><input type="email" name="email" placeholder="Email" required></div>
+        <div><input type="tel" name="phone" placeholder="Phone" required></div>
+      </div>
+
+      <div class="radio-group">
+        <p>Which course are you applying for?</p>
+        <label><input type="radio" name="course" value="A" required> Course A</label><br>
+        <label><input type="radio" name="course" value="B"> Course B</label><br>
+        <label><input type="radio" name="course" value="C"> Course C</label>
+      </div>
+
+      <div class="row">
+        <div><input type="date" name="dob" required></div>
+        <div class="gender-group">
+          <label><input type="radio" name="gender" value="MALE" required> MALE</label>
+          <label><input type="radio" name="gender" value="FEMALE"> FEMALE</label>
+        </div>
+      </div>
+
+      <label for="education">Education</label>
+      <select id="education" name="education" required>
+        <option value="">Select</option>
+        <option value="school">School</option>
+        <option value="college">College</option>
+        <option value="university">University</option>
+      </select>
+
+      <textarea name="address" placeholder="Address" rows="3" required></textarea>
+
+      <div class="row">
+        <div><input type="text" name="city" placeholder="City" required></div>
+        <div><input type="text" name="state" placeholder="State" required></div>
+      </div>
+
+      <div class="row">
+        <div><input type="text" name="zip" placeholder="Zip Code" required></div>
+        <div><input type="text" name="country" placeholder="Country" required></div>
+      </div>
+
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+  </div>
+
+</body>
+</html>

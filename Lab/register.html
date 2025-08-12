@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Library Registration</title>
+  <link rel="stylesheet" href="./register.css" />
+</head>
+<body>
+  <div class="form-container">
+    <h2>Library Registration</h2>
+    <form action="" method="post" onsubmit="return validateForm()">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="dob">Date of Birth</label>
+      <input type="date" id="dob" name="dob" required />
+
+      <label for="phone">Phone Number</label>
+      <input type="text" id="phone" name="phone" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" required />
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required />
+
+      <label for="confirm">Confirm Password</label>
+      <input type="password" id="confirm" name="confirm" required />
+
+      <button type="submit">Register</button>
+    </form>
+
+    <script>
+      function validateForm() {
+        const name = document.getElementById("name").value.trim();
+        const dob = document.getElementById("dob").value;
+        const phone = document.getElementById("phone").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const username = document.getElementById("username").value.trim();
+        const password = document.getElementById("password").value;
+        const confirm = document.getElementById("confirm").value;
+
+        const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+        const phonePattern = /^[6-9][0-9]{9}$/;
+
+        const dobDate = new Date(dob);
+        const today = new Date();
+        const minDate = new Date(today.getFullYear() - 18, today.getMonth(), today.getDate());
+
+        if (
+          name === "" || dob === "" || phone === "" || email === "" ||
+          username === "" || password === "" || confirm === ""
+        ) {
+          alert("All fields are required.");
+          return false;
+        }
+
+        if (isNaN(dobDate.getTime()) || dobDate > today) {
+          alert("Please enter a valid date of birth.");
+          return false;
+        }
+
+        if (name.length < 3) {
+          alert("Name must be at least 3 characters.");
+          return false;
+        }
+
+        if (dobDate > minDate) {
+          alert("You must be at least 18 years old to register.");
+          return false;
+        }
+
+        if (!emailPattern.test(email)) {
+          alert("Please enter a valid email address.");
+          return false;
+        }
+
+        if (!phonePattern.test(phone)) {
+          alert("Phone number must start with 6, 7, 8, or 9 and be exactly 10 digits.");
+          return false;
+        }
+
+        if (password.length < 6) {
+          alert("Password must be at least 6 characters long.");
+          return false;
+        }
+
+        if (password !== confirm) {
+          alert("Passwords do not match.");
+          return false;
+        }
+        localStorage.setItem("registeredUsername", username);
+        localStorage.setItem("registeredPassword", password);
+
+        alert("Registration Successful!");
+        window.location.href = "index.html";
+        return false;
+      }
+    </script>
+  </div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Document</title>
+  <style>
+    .container {
+      width: 100%;
+      border: 1.5px solid gray;
+      padding: 20px;
+      display: flex;
+      justify-content: space-evenly;
+    }
+    video {
+      width: 500px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <video controls src="Videos/Saveetha School of Engineering _ SIMATS _ Campus Walk Through.mp4"></video>
+    <video controls src="Videos/SIMATS Saveetha School of Engineering Cover Song 2022 ArabicKuthu JalabulaJangu Halamithi Habibo.mp4"></video>
+  </div>
+
+  <script>
+    const videos = document.querySelectorAll("video");
+
+    videos.forEach((video) => {
+      video.addEventListener("play", () => {
+        videos.forEach((otherVideo) => {
+          if (otherVideo !== video) {
+            otherVideo.pause();
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
